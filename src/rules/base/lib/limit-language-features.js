@@ -154,13 +154,13 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/unit-whitelist/
      *
      * @example
-     * [["px", "em", "rem"], {
+     * [["px", "em", "rem", "%", "vh", "vw"], {
      *  ignoreProperties: {
      *    unit: [],
      *  }
      * }]
      */
-    "unit-whitelist": [["px", "em", "rem"], {
+    "unit-whitelist": [["px", "em", "rem", "%", "vh", "vw"], {
       ignoreProperties: {
         unit: [],
       },
@@ -295,6 +295,7 @@ module.exports = {
      * "overflow",
      * "overflow-x",
      * "overflow-y",
+     * "-styled-mixin[0-9]+",
      * ]
      */
     "property-whitelist": [
@@ -354,6 +355,7 @@ module.exports = {
       "overflow",
       "overflow-x",
       "overflow-y",
+      "/-styled-mixin[0-9]+",
     ],
 
     // Declaration
