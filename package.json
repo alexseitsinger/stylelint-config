@@ -27,10 +27,11 @@
     "stylelint"
   ],
   "peerDependencies": {
-    "stylelint": "^0.0.0"
+    "stylelint": "^10.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.8.0"
   },
   "devDependencies": {
-    "@alexseitsinger/eslint-config": "^0.8.0",
     "eslint": "^6.0.0",
     "eslint-plugin-import": "^2.17.3"
   }
