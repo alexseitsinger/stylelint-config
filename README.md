@@ -385,7 +385,7 @@ Disallow hex colors.
 ##### Examples
 
 ```javascript
-false
+null
 ```
 
 #### function-blacklist
@@ -592,7 +592,64 @@ Specify a whitelist of allowed properties.
 ##### Examples
 
 ```javascript
-[]
+[
+"margin",
+"margin-left",
+"margin-right""
+"margin-top",
+"margin-bottom",
+"padding",
+"padding-left",
+"padding-right",
+"padding-top",
+"padding-bottom",
+"width",
+"min-width",
+"max-width",
+"height",
+"min-height",
+"max-height",
+"font",
+"font-weight",
+"font-style",
+"font-family",
+"font-size",
+"text-transform",
+"text-shadow",
+"text-align",
+"color",
+"justify-content",
+"align-items",
+"flex",
+"flex-direction",
+"display",
+"float",
+"z-index",
+"box-shadow",
+"box-sizing",
+"border-radius",
+"position",
+"left",
+"right",
+"top",
+"bottom",
+"vertical-align",
+"line-height",
+"border",
+"border-left",
+"border-right",
+"border-top",
+"border-bottom",
+"background",
+"background-color",
+"background-image",
+"background-size",
+"background-position",
+"background-repeat",
+"overflow",
+"overflow-x",
+"overflow-y",
+]
 ```
 
 #### declaration-block-no-redundant-longhand-properties
@@ -764,8 +821,8 @@ Limit the number of attribute selectors in a selector.
 ##### Examples
 
 ```javascript
-[10, {
- ignoreAttribute: [],
+[1, {
+ ignoreAttributes: [],
 }]
 ```
 
@@ -850,9 +907,7 @@ Limit the specificity of selectors.
 ##### Examples
 
 ```javascript
-["id,class,type", {
- ignoreSelectors: [],
-}]
+null
 ```
 
 #### selector-max-type
@@ -891,7 +946,7 @@ Specify a pattern for the selectors of rules nested within rules.
 ##### Examples
 
 ```javascript
-"^(?:hover|focus)$"
+"(?:(?:(?:&:)|(?:& > ))?(?:(?:[a-z-]+)|(?:\${[a-zA-Z]+}),?))+"
 ```
 
 #### selector-no-qualifying-type
@@ -943,7 +998,35 @@ Specify a whitelist of allowed pseudo-class selectors.
 ##### Examples
 
 ```javascript
-[]
+[
+"hover",
+"focus",
+"focus-within",
+"active",
+"has",
+"disabled",
+"first-of-type",
+"last-of-type",
+"nth-of-type",
+"nth-last-of-type",
+"only-of-type",
+"placeholder-shown",
+"required",
+"root",
+"target",
+"visited",
+"link",
+"any-link",
+"not",
+"invalid",
+"out-of-range",
+"empty",
+"enabled",
+"default",
+"checked",
+"in-range",
+"lang",
+]
 ```
 
 #### selector-pseudo-element-blacklist
@@ -1253,6 +1336,11 @@ true
 
 Disallow duplicate properties within declaration blocks.
 
+NOTES:
+
+-   We sometimes use duplicate css to force dynamic values using 'auto'
+    then a 'min-height', etc. So, ignore duplicates with different values.
+
 [https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties/][425]
 
 ##### Examples
@@ -1327,11 +1415,7 @@ Disallow unknown type selectors.
 ##### Examples
 
 ```javascript
-[true, {
- ignore: [],
- ignoreNamespace: [],
- ignoreTypes: [],
-}]
+true
 ```
 
 #### media-feature-name-no-unknown
@@ -1675,9 +1759,7 @@ Disallow units for zero lengths.
 ##### Examples
 
 ```javascript
-[true, {
- ignore: [],
-}]
+true
 ```
 
 #### unit-case
@@ -1890,7 +1972,7 @@ Require a newline or disallow whitespace before the semicolons of declaration bl
 ##### Examples
 
 ```javascript
-"never"
+"never-multi-line"
 ```
 
 #### declaration-block-semicolon-space-after
@@ -1902,7 +1984,7 @@ Require a single space or disallow whitespace after the semicolons of declaratio
 ##### Examples
 
 ```javascript
-"never"
+null
 ```
 
 #### declaration-block-semicolon-space-before
@@ -1986,7 +2068,7 @@ Require a single space or disallow whitespace before the closing brace of blocks
 ##### Examples
 
 ```javascript
-"always"
+"never"
 ```
 
 #### block-opening-brace-newline-after
@@ -2010,7 +2092,7 @@ Require a newline or disallow whitespace before the opening brace of blocks.
 ##### Examples
 
 ```javascript
-"never"
+null
 ```
 
 #### block-opening-brace-space-after
@@ -2022,7 +2104,7 @@ Require a single space or disallow whitespace after the opening brace of blocks.
 ##### Examples
 
 ```javascript
-"never"
+null
 ```
 
 #### block-opening-brace-space-before
@@ -2034,9 +2116,7 @@ Require a single space or disallow whitespace before the opening brace of blocks
 ##### Examples
 
 ```javascript
-["always", {
- ignoreAtRules: [],
-}]
+null
 ```
 
 #### selector-attribute-brackets-space-inside
@@ -2192,7 +2272,7 @@ Require a newline or disallow whitespace after the commas of selector lists.
 ##### Examples
 
 ```javascript
-"never"
+"always-multi-line"
 ```
 
 #### selector-list-comma-newline-before
@@ -2204,7 +2284,7 @@ Require a newline or disallow whitespace before the commas of selector lists.
 ##### Examples
 
 ```javascript
-"never"
+"never-multi-line"
 ```
 
 #### selector-list-comma-space-after
@@ -2241,7 +2321,7 @@ Require or disallow an empty line before rules.
 
 ```javascript
 ["always", {
- except: [],
+ except: ["inside-block"],
  ignore: [],
 }]
 ```
@@ -2403,7 +2483,7 @@ Require a newline after at-rule names.
 ##### Examples
 
 ```javascript
-"never"
+"always-multi-line"
 ```
 
 #### at-rule-name-space-after
@@ -2415,7 +2495,7 @@ Require a single space after at-rule names.
 ##### Examples
 
 ```javascript
-"never"
+"always"
 ```
 
 #### at-rule-semicolon-newline-after
