@@ -1,6 +1,6 @@
 {
   "name": "@alexseitsinger/stylelint-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Custom configuration for Stylelint",
   "main": "src/index.js",
   "homepage": "https://www.alexseitsinger.com/packages/node/stylelint-config",
