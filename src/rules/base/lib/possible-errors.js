@@ -308,12 +308,17 @@ module.exports = {
     /**
      * Disallow empty sources.
      *
+     * NOTES:
+     * - Since we use a mixed syntax (jsx) in VIM, and most of our javascript
+     *   files do not have css in it, this will throw an error. So, to avoid
+     *   this, disable this rule completely.
+     *
      * https://stylelint.io/user-guide/rules/no-empty-source/
      *
      * @example
-     * true
+     * null
      */
-    "no-empty-source": true,
+    "no-empty-source": null,
 
     /**
      * Disallow extra semicolons.
