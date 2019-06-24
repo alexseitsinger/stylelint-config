@@ -296,6 +296,9 @@ module.exports = {
      * "overflow-x",
      * "overflow-y",
      * "-styled-mixin[0-9]+",
+     * "white-space",
+     * "text-overflow",
+     * "word-wrap",
      * ]
      */
     "property-whitelist": [
@@ -355,6 +358,9 @@ module.exports = {
       "overflow",
       "overflow-x",
       "overflow-y",
+      "word-wrap",
+      "text-overflow",
+      "white-space",
       "/-styled-mixin[0-9]+",
     ],
 
