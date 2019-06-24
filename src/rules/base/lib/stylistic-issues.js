@@ -898,9 +898,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/comment-whitespace-inside/
      *
      * @example
-     * "never"
+     * "always"
      */
-    "comment-whitespace-inside": "never",
+    "comment-whitespace-inside": "always",
 
     // General/Sheet
     /**
