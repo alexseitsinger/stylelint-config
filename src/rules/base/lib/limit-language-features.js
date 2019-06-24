@@ -30,9 +30,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/color-no-hex/
      *
      * @example
-     * false
+     * null
      */
-    "color-no-hex": false,
+    "color-no-hex": null,
 
     // Function
 
@@ -238,9 +238,123 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/property-whitelist/
      *
      * @example
-     * []
+     * [
+     * "margin",
+     * "margin-left",
+     * "margin-right""
+     * "margin-top",
+     * "margin-bottom",
+     * "padding",
+     * "padding-left",
+     * "padding-right",
+     * "padding-top",
+     * "padding-bottom",
+     * "width",
+     * "min-width",
+     * "max-width",
+     * "height",
+     * "min-height",
+     * "max-height",
+     * "font",
+     * "font-weight",
+     * "font-style",
+     * "font-family",
+     * "font-size",
+     * "text-transform",
+     * "text-shadow",
+     * "text-align",
+     * "color",
+     * "justify-content",
+     * "align-items",
+     * "flex",
+     * "flex-direction",
+     * "display",
+     * "float",
+     * "z-index",
+     * "box-shadow",
+     * "box-sizing",
+     * "border-radius",
+     * "position",
+     * "left",
+     * "right",
+     * "top",
+     * "bottom",
+     * "vertical-align",
+     * "line-height",
+     * "border",
+     * "border-left",
+     * "border-right",
+     * "border-top",
+     * "border-bottom",
+     * "background",
+     * "background-color",
+     * "background-image",
+     * "background-size",
+     * "background-position",
+     * "background-repeat",
+     * "overflow",
+     * "overflow-x",
+     * "overflow-y",
+     * ]
      */
-    "property-whitelist": [],
+    "property-whitelist": [
+      "margin",
+      "margin-left",
+      "margin-right",
+      "margin-top",
+      "margin-bottom",
+      "padding",
+      "padding-left",
+      "padding-right",
+      "padding-top",
+      "padding-bottom",
+      "width",
+      "min-width",
+      "max-width",
+      "height",
+      "min-height",
+      "max-height",
+      "font",
+      "font-weight",
+      "font-style",
+      "font-family",
+      "font-size",
+      "text-transform",
+      "text-shadow",
+      "text-align",
+      "color",
+      "justify-content",
+      "align-items",
+      "flex",
+      "flex-direction",
+      "display",
+      "float",
+      "z-index",
+      "box-shadow",
+      "box-sizing",
+      "border-radius",
+      "position",
+      "left",
+      "right",
+      "top",
+      "bottom",
+      "vertical-align",
+      "line-height",
+      "border",
+      "border-left",
+      "border-right",
+      "border-top",
+      "border-bottom",
+      "background",
+      "background-color",
+      "background-image",
+      "background-size",
+      "background-position",
+      "background-repeat",
+      "overflow",
+      "overflow-x",
+      "overflow-y",
+    ],
 
     // Declaration
 
@@ -400,12 +514,12 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-max-attribute/
      *
      * @example
-     * [10, {
-     *  ignoreAttribute: [],
+     * [1, {
+     *  ignoreAttributes: [],
      * }]
      */
-    "selector-max-attribute": [10, {
-      ignoreAttribute: [],
+    "selector-max-attribute": [1, {
+      ignoreAttributes: [],
     }],
 
     /**
@@ -474,13 +588,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-max-specificity/
      *
      * @example
-     * ["id,class,type", {
-     *  ignoreSelectors: [],
-     * }]
+     * null
      */
-    "selector-max-specificity": ["id,class,type", {
-      ignoreSelectors: [],
-    }],
+    "selector-max-specificity": null,
 
     /**
      * Limit the number of type selectors in a selector.
@@ -514,9 +624,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-nested-pattern/
      *
      * @example
-     * "^(?:hover|focus)$"
+     * "(?:(?:(?:&:)|(?:& > ))?(?:(?:[a-z-]+)|(?:\${[a-zA-Z]+}),?))+"
      */
-    "selector-nested-pattern": "^:(?:hover|focus)$",
+    "selector-nested-pattern": "(?:(?:(?:&:)|(?:& > ))?(?:(?:[a-z-]+)|(?:\${[a-zA-Z]+}),?))+",
 
     /**
      * Disallow qualifying a selector by type.
@@ -562,9 +672,65 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-pseudo-class-whitelist/
      *
      * @example
-     * []
+     * [
+     * "hover",
+     * "focus",
+     * "focus-within",
+     * "active",
+     * "has",
+     * "disabled",
+     * "first-of-type",
+     * "last-of-type",
+     * "nth-of-type",
+     * "nth-last-of-type",
+     * "only-of-type",
+     * "placeholder-shown",
+     * "required",
+     * "root",
+     * "target",
+     * "visited",
+     * "link",
+     * "any-link",
+     * "not",
+     * "invalid",
+     * "out-of-range",
+     * "empty",
+     * "enabled",
+     * "default",
+     * "checked",
+     * "in-range",
+     * "lang",
+     * ]
      */
-    "selector-pseudo-class-whitelist": [],
+    "selector-pseudo-class-whitelist": [
+      "hover",
+      "focus",
+      "focus-within",
+      "active",
+      "has",
+      "disabled",
+      "first-of-type",
+      "last-of-type",
+      "nth-of-type",
+      "nth-last-of-type",
+      "only-of-type",
+      "placeholder-shown",
+      "required",
+      "root",
+      "target",
+      "visited",
+      "link",
+      "any-link",
+      "not",
+      "invalid",
+      "out-of-range",
+      "empty",
+      "enabled",
+      "default",
+      "checked",
+      "in-range",
+      "lang",
+    ],
 
     /**
      * Specify a blacklist of disallowed pseudo-element selectors.

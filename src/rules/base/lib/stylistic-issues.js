@@ -210,13 +210,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/length-zero-no-unit/
      *
      * @example
-     * [true, {
-     *  ignore: [],
-     * }]
+     * true
      */
-    "length-zero-no-unit": [true, {
-      ignore: [],
-    }],
+    "length-zero-no-unit": true,
 
     // Unit
     /**
@@ -402,7 +398,7 @@ module.exports = {
      * @example
      * "always"
      */
-    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-semicolon-newline-after": "always-multi-line",
 
     /**
      * Require a newline or disallow whitespace before the semicolons of declaration blocks.
@@ -410,9 +406,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before/
      *
      * @example
-     * "never"
+     * "never-multi-line"
      */
-    "declaration-block-semicolon-newline-before": "never",
+    "declaration-block-semicolon-newline-before": "never-multi-line",
 
     /**
      * Require a single space or disallow whitespace after the semicolons of declaration blocks.
@@ -420,9 +416,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after/
      *
      * @example
-     * "never"
+     * null
      */
-    "declaration-block-semicolon-space-after": "never",
+    "declaration-block-semicolon-space-after": null,
 
     /**
      * Require a single space or disallow whitespace before the semicolons of declaration blocks.
@@ -464,7 +460,9 @@ module.exports = {
      * @example
      * "always"
      */
-    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-after": ["always", {
+      ignoreAtRules: [],
+    }],
 
     /**
      * Require a newline or disallow whitespace before the closing brace of blocks.
@@ -474,7 +472,7 @@ module.exports = {
      * @example
      * "always"
      */
-    "block-closing-brace-newline-before": "always",
+    "block-closing-brace-newline-before": "always-multi-line",
 
     /**
      * Require a single space or disallow whitespace after the closing brace of blocks.
@@ -484,7 +482,7 @@ module.exports = {
      * @example
      * "never"
      */
-    "block-closing-brace-space-after": "never",
+    "block-closing-brace-space-after": null,
 
     /**
      * Require a single space or disallow whitespace before the closing brace of blocks.
@@ -492,9 +490,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/block-closing-brace-space-before/
      *
      * @example
-     * "always"
+     * "never"
      */
-    "block-closing-brace-space-before": "always",
+    "block-closing-brace-space-before": null,
 
     /**
      * Require a newline after the opening brace of blocks.
@@ -512,9 +510,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/block-opening-brace-newline-before/
      *
      * @example
-     * "never"
+     * null
      */
-    "block-opening-brace-newline-before": "never",
+    "block-opening-brace-newline-before": null,
 
     /**
      * Require a single space or disallow whitespace after the opening brace of blocks.
@@ -522,9 +520,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/block-opening-brace-space-after/
      *
      * @example
-     * "never"
+     * null
      */
-    "block-opening-brace-space-after": "never",
+    "block-opening-brace-space-after": null,
 
     /**
      * Require a single space or disallow whitespace before the opening brace of blocks.
@@ -532,13 +530,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/block-opening-brace-space-before/
      *
      * @example
-     * ["always", {
-     *  ignoreAtRules: [],
-     * }]
+     * null
      */
-    "block-opening-brace-space-before": ["always", {
-      ignoreAtRules: [],
-    }],
+    "block-opening-brace-space-before": null,
 
     /**
      * Require a single space or disallow whitespace on the inside of the brackets within attribute selectors.
@@ -666,9 +660,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-list-comma-newline-after/
      *
      * @example
-     * "never"
+     * "always-multi-line"
      */
-    "selector-list-comma-newline-after": "never",
+    "selector-list-comma-newline-after": "always-multi-line",
 
     /**
      * Require a newline or disallow whitespace before the commas of selector lists.
@@ -676,9 +670,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-list-comma-newline-before/
      *
      * @example
-     * "never"
+     * "never-multi-line"
      */
-    "selector-list-comma-newline-before": "never",
+    "selector-list-comma-newline-before": "never-multi-line",
 
     /**
      * Require a single space or disallow whitespace after the commas of selector lists.
@@ -708,13 +702,13 @@ module.exports = {
      *
      * @example
      * ["always", {
-     *  except: [],
+     *  except: ["inside-block"],
      *  ignore: [],
      * }]
      */
     "rule-empty-line-before": ["always", {
-      except: [],
-      ignore: [],
+      except: ["inside-block"],
+      ignore: []
     }],
 
     // Media Feature
@@ -853,9 +847,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/at-rule-name-newline-after/
      *
      * @example
-     * "never"
+     * "always-multi-line"
      */
-    "at-rule-name-newline-after": "never",
+    "at-rule-name-newline-after": "always-multi-line",
 
     /**
      * Require a single space after at-rule names.
@@ -863,9 +857,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/at-rule-name-space-after/
      *
      * @example
-     * "never"
+     * "always"
      */
-    "at-rule-name-space-after": "never",
+    "at-rule-name-space-after": "always",
 
     /**
      * Require a newline after the semicolon of at-rules.
@@ -927,7 +921,6 @@ module.exports = {
     "indentation": [2, {
       baseIndentLevel: 2,
       indentInsideParens: "twice",
-      indentInsideParens: true,
       indentClosingBrace: false,
       except: [],
       ignore: [],

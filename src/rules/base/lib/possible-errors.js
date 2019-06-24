@@ -140,6 +140,10 @@ module.exports = {
     /**
      * Disallow duplicate properties within declaration blocks.
      *
+     * NOTES:
+     * - We sometimes use duplicate css to force dynamic values using 'auto'
+     *   then a 'min-height', etc. So, ignore duplicates with different values.
+     *
      * https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties/
      *
      * @example
@@ -149,7 +153,9 @@ module.exports = {
      * }]
      */
     "declaration-block-no-duplicate-properties": [true, {
-      ignore: [],
+      ignore: [
+        "consecutive-duplicates-with-different-values"
+      ],
       ignoreProperties: [],
     }],
 
@@ -215,17 +221,9 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/selector-type-no-unknown/
      *
      * @example
-     * [true, {
-     *  ignore: [],
-     *  ignoreNamespace: [],
-     *  ignoreTypes: [],
-     * }]
+     * true
      */
-    "selector-type-no-unknown": [true, {
-      ignore: [],
-      ignoreNamespace: [],
-      ignoreTypes: [],
-    }],
+    "selector-type-no-unknown": true,
 
     // Media Feature
 
