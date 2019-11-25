@@ -2,12 +2,11 @@
   "name": "@alexseitsinger/stylelint-config",
   "version": "0.1.0",
   "description": "Custom configuration for Stylelint",
-  "main": "src/index.js",
-  "homepage": "https://www.alexseitsinger.com/packages/node/stylelint-config",
+  "main": "index.js",
+  "homepage": "https://github.com/alexseitsinger/stylelint-config",
   "author": {
     "name": "Alex Seitsinger",
-    "email": "software@alexseitsinger.com",
-    "url": "https://www.alexseitsinger.com"
+    "email": "software@alexseitsinger.com"
   },
   "license": "BSD-2-Clause",
   "repository": {
@@ -18,7 +17,8 @@
     "url": "https://github.com/alexseitsinger/stylelint-config/issues"
   },
   "files": [
-    "src/",
+    "rules/*",
+    "index.js",
     "package.json",
     "README.md",
     "LICENSE"
@@ -27,7 +27,7 @@
     "stylelint"
   ],
   "peerDependencies": {
-    "stylelint": "^10.1.0",
+    "stylelint": "^12.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.8.0"
   },
