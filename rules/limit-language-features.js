@@ -1,11 +1,4 @@
-/**
- * @module limit-language-features
- */
-
 module.exports = {
-  /**
-   * @namespace
-   */
   rules: {
     // Color
     /**

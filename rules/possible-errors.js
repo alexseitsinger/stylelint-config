@@ -1,11 +1,4 @@
-/**
- * @module possible-errors
- */
-
 module.exports = {
-  /**
-   * @namespace
-   */
   rules: {
     /**
      * Disallow invalid hex colors.

@@ -1,11 +1,4 @@
-/**
- * @module stylistic-issues
- */
 module.exports = {
-
-  /**
-   * @namespace
-   */
   rules: {
 
     // Colors
